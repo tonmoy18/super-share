@@ -20,13 +20,10 @@ then go to http://localhost:3000 from a web browser
 
 ### How do I get set up? ###
 
-* Summary of set up
-Set up rails the conventional way and run the server
-* Dependencies
-Ruby, Rails, BCrypt gem
+* Set up rails the conventional way and run the server
+* Dependencies: Ruby, Rails, BCrypt gem
 
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-Tonmoy Roy
+* Tonmoy Roy (Repo owner)
