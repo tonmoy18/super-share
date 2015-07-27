@@ -1,5 +1,5 @@
 class LoginsController < ApplicationController
-  before_action :set_login, only: [:show, :edit, :update, :destroy]
+  before_action :set_login, only: [:show, :edit, :update, :follow]
 
   # GET /logins
   # GET /logins.json
@@ -51,15 +51,23 @@ class LoginsController < ApplicationController
     end
   end
 
-  # DELETE /logins/1
-  # DELETE /logins/1.json
-  def destroy
-    @login.destroy
+  def follow
+    @follow = Follow.create(follower_id: session[:current_user_id], author_id: @login.id)
     respond_to do |format|
       format.html { redirect_to logins_url }
       format.json { head :no_content }
     end
   end
+
+  # # DELETE /logins/1
+  # # DELETE /logins/1.json
+  # def destroy
+  #   @login.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to logins_url }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  post: MyString
+  author: 1
+  cost: 1
+
+two:
+  post: MyString
+  author: 1
+  cost: 1

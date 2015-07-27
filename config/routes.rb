@@ -1,4 +1,6 @@
 SuperShare::Application.routes.draw do
+  resources :posts
+
   get "auth/login"
   get "auth/logout"
 
@@ -6,6 +8,10 @@ SuperShare::Application.routes.draw do
 
 
   resources :logins
+
+  post "follow/create", to: 'follow#create'
+  delete "follow/:id", to: 'follow#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
