@@ -15,6 +15,7 @@
 
   <tbody>
     <% @logins.each do |login| %>
+
     <tr>
       <td><%= login.first_name %></td>
       <td><%= login.last_name %></td>
@@ -22,7 +23,13 @@
       <td><%= LOGIN_TYPES[login.login_type] %></td>
       <td><%= link_to 'Show', login %></td>
       <td><%= link_to 'Edit', edit_login_path(login) %></td>
-      <td><%= link_to 'Follow', follow_login_path, data: { confirm: 'Are you sure?' } %></td>
+      <td>
+        <% if @current_user.inverse_followers.include?(login) %>
+          <%= "Follwoing" %>
+        <% else %>
+          <%= link_to 'Follow', create_follow_path(login), method: :post %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

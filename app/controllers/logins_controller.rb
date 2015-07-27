@@ -14,7 +14,7 @@ class LoginsController < ApplicationController
 
   # GET /logins/new
   def new
-#    @login = Login.new
+    @login = Login.new
   end
 
   # GET /logins/1/edit
@@ -52,7 +52,7 @@ class LoginsController < ApplicationController
   end
 
   def follow
-    @follow = Follow.create(follower_id: session[:current_user_id], author_id: @login.id)
+    @follow = Follow.create(follower_id: @current_user.id, author_id: @login.id)
     respond_to do |format|
       format.html { redirect_to logins_url }
       format.json { head :no_content }
@@ -79,4 +79,6 @@ class LoginsController < ApplicationController
     def login_params
       params.require(:login).permit(:first_name, :last_name, :username, :password, :login_type)
     end
+
+
 end

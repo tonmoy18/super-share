@@ -9,8 +9,8 @@ SuperShare::Application.routes.draw do
 
   resources :logins
 
-  post "follow/create", to: 'follow#create'
-  delete "follow/:id", to: 'follow#destroy'
+  post "follow/:id", to: 'follows#create', as: :create_follow
+  delete "follow/:id", to: 'follows#destroy', as: :destroy_follow
 
 
   # The priority is based upon order of creation: first created -> highest priority.

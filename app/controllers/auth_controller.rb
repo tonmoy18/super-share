@@ -2,6 +2,7 @@ class AuthController < ApplicationController
   include SignInHelper
 
   skip_before_action :require_login, only: [:login, :create, :failed]
+  skip_before_action :require_set_current_user, only: [:login, :create, :failed]
 
   def login
     if logged_in?
