@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @login.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @login.last_name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @login.username %>
+</p>
+
+<p>
+  <strong>Login type:</strong>
+  <%= LOGIN_TYPES[@login.login_type] if @login.login_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_login_path(@login) %> |
+<%= link_to 'Back', logins_path %>

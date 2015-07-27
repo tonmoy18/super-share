@@ -1,0 +1,33 @@
+<h1>Listing logins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Username</th>
+      <th>Login type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logins.each do |login| %>
+    <tr>
+      <td><%= login.first_name %></td>
+      <td><%= login.last_name %></td>
+      <td><%= login.username %></td>
+      <td><%= LOGIN_TYPES[login.login_type] %></td>
+      <td><%= link_to 'Show', login %></td>
+      <td><%= link_to 'Edit', edit_login_path(login) %></td>
+      <td><%= link_to 'Destroy', login, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Login', new_login_path %>
