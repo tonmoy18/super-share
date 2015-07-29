@@ -38,3 +38,6 @@ gem 'jbuilder', '~> 1.0.1'
 # gem 'debugger'
 
 gem 'bcrypt'
+
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'

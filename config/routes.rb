@@ -1,4 +1,5 @@
 SuperShare::Application.routes.draw do
+  get "welcome/index"
   resources :posts
 
   get "auth/login"
@@ -11,6 +12,8 @@ SuperShare::Application.routes.draw do
 
   post "follow/:id", to: 'follows#create', as: :create_follow
   delete "follow/:id", to: 'follows#destroy', as: :destroy_follow
+
+  root 'welcome#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

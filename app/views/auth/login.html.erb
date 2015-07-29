@@ -1,20 +1,36 @@
-<h1>Login</h1>
+<div class="container">
 
-<%= form_for :login do |f| %>
+  <div class="row">
+      <div class="col-lg-12 text-center">
+          <h2>Login</h2>
+      </div>
+  </div>
 
-<div class='field'>
-<%= f.label :username %>
-<%= f.text_field :username %>
-</div>
 
-<div class='field'>
-<%= f.label :password %>
-<%= f.text_field :password, value: "" %>
-</div>
+  <%= form_for :login do |f| %>
 
-<div class="actions">
-  <%= f.submit %>
-</div>
 
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <%= f.label :username %>
+            <%= f.text_field :username, placeholder: "Username", aria_invalid: false%>
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+
+
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <%= f.label :password %>
+            <%= f.password_field :password, placeholder: "Password"%>
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+
+    <div>
+      <%= f.submit :login, value: "Login" %>
+    </div>
+
+  </div>
 
 <% end %>
