@@ -1,6 +1,7 @@
 class LoginsController < ApplicationController
   before_action :set_login, only: [:show, :edit, :update, :follow]
-  before_action :check_admin, only: [:new, :edit, :update, :create]
+  before_action :check_admin, only: [:new, :create]
+  before_action :check_self, only: [:edit, :update]
   # GET /logins
   # GET /logins.json
   def index
@@ -85,5 +86,10 @@ class LoginsController < ApplicationController
 	redirect_to logins_path
       end
     end
+
+    def check_self
+      if @login != @current_user
+	redirect_to logins_path
+      end
 
 end

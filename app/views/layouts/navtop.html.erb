@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand">
-                  <%= user.username if user %>
+                  <%= link_to user.username, user if user %>
                 </div>
             </div>
 
