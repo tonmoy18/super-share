@@ -91,5 +91,6 @@ class LoginsController < ApplicationController
       if @login != @current_user
 	redirect_to logins_path
       end
+    end
 
 end
