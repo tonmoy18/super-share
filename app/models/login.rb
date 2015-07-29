@@ -7,6 +7,8 @@ class Login < ActiveRecord::Base
   has_many :inverse_follows, class_name: "Follow", foreign_key: "follower_id"
   has_many :inverse_followers, through: :inverse_follows, source: :login
 
+  has_many :posts
+
   include BCrypt
 
   def password

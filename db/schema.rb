@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727072413) do
+ActiveRecord::Schema.define(version: 20150729174706) do
 
   create_table "follows", force: true do |t|
     t.integer  "follower_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150727072413) do
 
   create_table "posts", force: true do |t|
     t.string   "post"
-    t.integer  "author"
+    t.integer  "login_id"
     t.integer  "cost"
     t.datetime "created_at"
     t.datetime "updated_at"

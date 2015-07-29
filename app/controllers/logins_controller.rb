@@ -1,6 +1,6 @@
 class LoginsController < ApplicationController
   before_action :set_login, only: [:show, :edit, :update, :follow]
-
+  before_action :check_admin
   # GET /logins
   # GET /logins.json
   def index
@@ -79,6 +79,11 @@ class LoginsController < ApplicationController
     def login_params
       params.require(:login).permit(:first_name, :last_name, :username, :password, :login_type)
     end
-
+    
+    def check_admin
+      if LOGIN_TYPES[@current_user.login_type] != 'Admin'
+	redirect_to posts_path
+      end
+    end
 
 end

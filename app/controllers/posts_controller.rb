@@ -4,7 +4,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = []
+    @current_user.followers.each do |follower|
+      @posts = @posts + follower.posts
+    end
   end
 
   # GET /posts/1
@@ -69,6 +72,9 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:post, :author, :cost)
+       p = params.require(:post).permit(:post)
+       p[:login]=@current_user
+       p[:cost]=nil
+       return p
     end
 end

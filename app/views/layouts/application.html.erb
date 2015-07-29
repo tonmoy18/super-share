@@ -13,7 +13,9 @@
 </head>
 <body>
 
+<% unless params[:controller] == "auth" %>
 <%= render template: "layouts/navtop", :locals => { :user => @current_user } %>
+<% end %>
 
 
 <%= yield %>

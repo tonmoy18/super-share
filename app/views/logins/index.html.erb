@@ -1,15 +1,15 @@
-<h1>Users List</h1>
-
+<h2 class="text-center">Users List</h2>
+<div class="col-lg-8 col-lg-offset-2">
 <table>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Username</th>
-      <th>Login type</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="col-sm-4">First Name</th>
+      <th class="col-sm-4">Last Name</th>
+      <th class="col-sm-4">Username</th>
+      <th class="col-sm-4">Type</th>
+      <th class="col-sm-4">Profile</th>
+      <th class="col-sm-4">Info</th>
+      <th class="col-sm-4">Follow</th>
     </tr>
   </thead>
 
@@ -17,16 +17,16 @@
     <% @logins.each do |login| %>
 
     <tr calss="row">
-      <td><%= login.first_name %></td>
-      <td><%= login.last_name %></td>
-      <td><%= login.username %></td>
-      <td><%= LOGIN_TYPES[login.login_type] %></td>
-      <td><%= link_to 'Show', login %></td>
-      <td><%= link_to 'Edit', edit_login_path(login) %></td>
-      <td>
+      <td class="col-sm-4"><%= login.first_name %></td>
+      <td class="col-sm-4"><%= login.last_name %></td>
+      <td class="col-sm-4"><%= login.username %></td>
+      <td class="col-sm-4"><%= LOGIN_TYPES[login.login_type] %></td>
+      <td class="col-sm-4"><%= link_to 'Show', login %></td>
+      <td class="col-sm-4"><%= link_to 'Edit', edit_login_path(login) %></td>
+      <td class="col-sm-4">
         <% if @current_user.inverse_followers.include?(login) %>
           <%= "Follwoing" %>
-        <% else %>
+        <% elsif @current_user != login %>
           <%= link_to 'Follow', create_follow_path(login), method: :post %>
         <% end %>
       </td>
@@ -34,7 +34,10 @@
     <% end %>
   </tbody>
 </table>
-
-<br />
-
+<div class="row">
+<div class="col-md-10">
 <%= link_to 'New User', new_login_path if LOGIN_TYPES[@current_user.login_type] == 'Admin'%>
+</div>
+</div>
+
+</div>

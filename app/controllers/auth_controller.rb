@@ -6,7 +6,7 @@ class AuthController < ApplicationController
 
   def login
     if logged_in?
-      redirect_to logins_path
+	redirect_to logins_path
     end
   end
 

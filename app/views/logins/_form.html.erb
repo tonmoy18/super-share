@@ -14,36 +14,41 @@
 <% end %>
 
 
-<div class='field'>
+<div class='form-group col-xs-12 floating-label-form-group controls'>
 <%= f.label :first_name %>
-<%= f.text_field :first_name %>
+<%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+<p class="help-block text-danger"></p>
 </div>
 
-<div class='field'>
+<div class='form-group col-xs-12 floating-label-form-group controls'>
 <%= f.label :last_name %>
-<%= f.text_field :last_name %>
+<%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+<p class="help-block text-danger"></p>
 </div>
 
-<div class='field'>
+<div class='form-group col-xs-12 floating-label-form-group controls'>
 <%= f.label :username %>
-<%= f.text_field :username %>
+<%= f.text_field :username, class: "form-control", placeholder: "Username" %>
+<p class="help-block text-danger"></p>
 </div>
 
-<div class='field'>
+<div class='form-group col-xs-12 floating-label-form-group controls'>
 <%= f.label :password %>
-<%= f.text_field :password, value: "" %>
+<%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+<p class="help-block text-danger"></p>
 </div>
 
-<div class='field'>
+<div class='form-group col-xs-12 controls'>
+<p class="help-block text-danger"></p>
 <%= f.label :login_type %>
 <%= f.select :login_type, [['Author',1],['User',2]]%>
+<p class="help-block text-danger"></p>
 </div>
 
-<div class="actions">
-  <%= f.submit %>
+<div class="form-group col-xs-12">
+  <%= f.submit "Create User", class: "btn btn-success btn-lg" %>
 </div>
 
 
 <% end %>
 
-<%= link_to 'Back', logins_path %>
