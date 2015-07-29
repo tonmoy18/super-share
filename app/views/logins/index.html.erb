@@ -18,10 +18,9 @@
     <tr calss="row">
       <td class="col-sm-4"><%= login.first_name %></td>
       <td class="col-sm-4"><%= login.last_name %></td>
-      <td class="col-sm-4"><%= login.username %></td>
+      <td class="col-sm-4"><%= link_to login.username, login %></td>
       <td class="col-sm-4"><%= LOGIN_TYPES[login.login_type] %></td>
-      <td class="col-sm-4"><%= link_to 'Show', login %> | 
-      <%= link_to 'Edit', edit_login_path(login) if LOGIN_TYPES[@current_user.login_type] == 'Admin' %></td>
+      <td class="col-sm-4"><%= link_to 'Edit', edit_login_path(login) if LOGIN_TYPES[@current_user.login_type] == 'Admin' %></td>
       <td class="col-sm-4">
         <% if @current_user.inverse_followers.include?(login) %>
           <%= "Follwoing" %>
