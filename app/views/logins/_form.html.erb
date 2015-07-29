@@ -30,13 +30,13 @@
 <%= f.text_field :username, class: "form-control", placeholder: "Username" %>
 <p class="help-block text-danger"></p>
 </div>
-
+<% if params[:action] == 'new' %>
 <div class='form-group col-xs-12 floating-label-form-group controls'>
 <%= f.label :password %>
 <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
 <p class="help-block text-danger"></p>
 </div>
-
+<% end %>
 <div class='form-group col-xs-12 controls'>
 <p class="help-block text-danger"></p>
 <%= f.label :login_type %>
