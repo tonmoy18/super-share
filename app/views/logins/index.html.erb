@@ -1,4 +1,4 @@
-<h1>Listing logins</h1>
+<h1>Users List</h1>
 
 <table>
   <thead>
@@ -16,7 +16,7 @@
   <tbody>
     <% @logins.each do |login| %>
 
-    <tr>
+    <tr calss="row">
       <td><%= login.first_name %></td>
       <td><%= login.last_name %></td>
       <td><%= login.username %></td>
@@ -37,4 +37,4 @@
 
 <br />
 
-<%= link_to 'New Login', new_login_path %>
+<%= link_to 'New User', new_login_path if LOGIN_TYPES[@current_user.login_type] == 'Admin'%>

@@ -17,7 +17,7 @@ module SignInHelper
   end
 
 
-  def logout
+  def logout_session
     unset_token
   end
 

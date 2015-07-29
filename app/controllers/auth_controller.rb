@@ -16,6 +16,7 @@ class AuthController < ApplicationController
   end
 
   def logout
+    logout_session
   end
 
   private

@@ -9,7 +9,7 @@
 
   <%= form_for :login do |f| %>
 
-
+  <div class="row">
     <div class="row control-group">
         <div class="form-group col-xs-12 floating-label-form-group controls">
             <%= f.label :username %>
@@ -17,8 +17,9 @@
             <p class="help-block text-danger"></p>
         </div>
     </div>
+</div>
 
-
+<div class="row">
     <div class="row control-group">
         <div class="form-group col-xs-12 floating-label-form-group controls">
             <%= f.label :password %>
@@ -26,10 +27,14 @@
             <p class="help-block text-danger"></p>
         </div>
     </div>
+</div>
 
+<div class="row">
     <div>
-      <%= f.submit :login, value: "Login" %>
+      <%= f.submit :login, value: "Login", class: "btn btn-success btn-lg" %>
     </div>
+</div>
+
 
   </div>
 
