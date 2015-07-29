@@ -19,11 +19,9 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-		    <% if LOGIN_TYPES[user.login_type] == 'Admin' %>
                     <li class="page-scroll">
 			<%= link_to 'Users', logins_path %>
                     </li>
-		    <% end %>
                     <li class="page-scroll">
 			<%= link_to 'Posts', posts_path %>
                     </li>
