@@ -1,14 +1,13 @@
 <h2 class="text-center">Users List</h2>
 <div class="col-lg-8 col-lg-offset-2">
-<table>
+<table name="loginTable" id="loginTable">
   <thead>
     <tr>
-      <th class="col-sm-4">First Name</th>
-      <th class="col-sm-4">Last Name</th>
-      <th class="col-sm-4">Username</th>
-      <th class="col-sm-4">Type</th>
-      <th class="col-sm-4">Profile</th>
-      <th class="col-sm-4">Follow</th>
+      <th class="col-sm-3">First Name</th>
+      <th class="col-sm-3">Last Name</th>
+      <th class="col-sm-3">Username</th>
+      <th class="col-sm-2">Type</th>
+      <th class="col-sm-2">Follow</th>
     </tr>
   </thead>
 
@@ -19,9 +18,8 @@
       <td class="col-sm-4"><%= login.first_name %></td>
       <td class="col-sm-4"><%= login.last_name %></td>
       <td class="col-sm-4"><%= link_to login.username, login %></td>
-      <td class="col-sm-4"><%= LOGIN_TYPES[login.login_type] %></td>
-      <td class="col-sm-4"><%= link_to 'Edit', edit_login_path(login) if LOGIN_TYPES[@current_user.login_type] == 'Admin' %></td>
-      <td class="col-sm-4">
+      <td class="col-sm-2"><%= LOGIN_TYPES[login.login_type] %></td>
+      <td class="col-sm-2">
         <% if @current_user.inverse_followers.include?(login) %>
           <%= "Follwoing" %>
         <% elsif @current_user != login %>
@@ -34,7 +32,8 @@
 </table>
 <div class="row">
 <div class="col-md-10">
-<%= link_to 'New User', new_login_path if LOGIN_TYPES[@current_user.login_type] == 'Admin'%>
+<p class=""
+<%= link_to 'Create New User', new_login_path if LOGIN_TYPES[@current_user.login_type] == 'Admin'%>
 </div>
 </div>
 
