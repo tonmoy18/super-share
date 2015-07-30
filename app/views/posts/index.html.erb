@@ -3,7 +3,9 @@
 
 <h1>Posts</h1>
 <p class="help-block text-danger"></p>
+<% if ['Author', 'Admin'].include? LOGIN_TYPES[@current_user.login_type] %>
 <%= link_to 'Make post', new_post_path %>
+<% end %>
 <p class="help-block text-danger"></p>
 <table name="postsTable" id="postsTable">
   <thead>
