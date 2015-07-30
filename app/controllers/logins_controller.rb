@@ -25,7 +25,7 @@ class LoginsController < ApplicationController
   # POST /logins
   # POST /logins.json
   def create
-    @login = Login.new(login_params)
+    @login = Login.new(new_login_params)
 
     respond_to do |format|
       if @login.save
@@ -42,7 +42,7 @@ class LoginsController < ApplicationController
   # PATCH/PUT /logins/1.json
   def update
     respond_to do |format|
-      if @login.update(login_params)
+      if @login.update(edit_login_params)
         format.html { redirect_to @login, notice: 'Login was successfully updated.' }
         format.json { head :no_content }
       else
@@ -77,8 +77,12 @@ class LoginsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def login_params
+    def new_login_params
       params.require(:login).permit(:first_name, :last_name, :username, :password, :login_type)
+    end
+
+    def edit_login_params
+      params.require(:login).permit(:first_name, :last_name)
     end
     
     def check_admin
