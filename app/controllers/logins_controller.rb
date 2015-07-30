@@ -84,16 +84,16 @@ class LoginsController < ApplicationController
     def edit_login_params
       params.require(:login).permit(:first_name, :last_name)
     end
-    
+
     def check_admin
       if LOGIN_TYPES[@current_user.login_type] != 'Admin'
-	redirect_to logins_path
+        redirect_to logins_path
       end
     end
 
     def check_self
       if @login != @current_user
-	redirect_to logins_path
+        redirect_to logins_path
       end
     end
 
