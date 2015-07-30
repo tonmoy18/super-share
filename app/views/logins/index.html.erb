@@ -1,6 +1,6 @@
 <h2 class="text-center">Users List</h2>
 <div class="col-lg-8 col-lg-offset-2">
-<table name="loginTable" id="loginTable">
+<table name="loginsTable" id="loginsTable">
   <thead>
     <tr>
       <th class="col-sm-3">First Name</th>
@@ -38,3 +38,8 @@
 </div>
 
 </div>
+<script>
+$(document).ready(function(){
+    $('#loginsTable').DataTable();
+});
+</script>

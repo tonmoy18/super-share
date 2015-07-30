@@ -14,9 +14,3 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-$(document).ready(function(){
-    $('#loginsTable').DataTable();
-});
-$(document).ready(function(){
-    $('#postsTable').DataTable();
-});
