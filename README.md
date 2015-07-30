@@ -14,9 +14,9 @@ then go to http://localhost:3000 from a web browser
 
 ### What is this repository for? ###
 
-* A MVP for a paid version of tweeter
-* 0.9.5
 * [Learn Rails]
+* A MVP for a paid version of tweeter
+* Version: 0.9.5
 
 ### How do I get set up? ###
 
