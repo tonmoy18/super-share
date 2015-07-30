@@ -20,8 +20,9 @@
   <strong>Login type:</strong>
   <%= LOGIN_TYPES[@login.login_type] if @login.login_type %>
 </p>
-
+<% if @login == @current_user %>
 <%= link_to 'Edit', edit_login_path(@login) %> |
+<% end %>
 <%= link_to 'User List', logins_path %>
 
 </div>
