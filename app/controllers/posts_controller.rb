@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_self, only: [:edit, :update]
   # GET /posts
   # GET /posts.json
   def index
@@ -77,4 +77,12 @@ class PostsController < ApplicationController
        p[:cost]=nil
        return p
     end
+
+    def check_self
+      if @login != @current_user
+        redirect_to posts_path
+      end
+    end
+
+
 end
