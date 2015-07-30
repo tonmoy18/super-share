@@ -17,3 +17,7 @@
 $(document).ready(function(){
     $('#loginTable').DataTable();
 });
+
+$(document).ready(function(){
+    $('#postsTable').DataTable();
+});
