@@ -22,7 +22,7 @@
       <td class="col-sm-2">
         <% if @current_user.inverse_followers.include?(login) %>
           <%= "Follwoing" %>
-        <% elsif @current_user != login %>
+        <% elsif @current_user != login and (['Admin', 'Author']).include? LOGIN_TYPES[login.login_type] %>
           <%= link_to 'Follow', create_follow_path(login), method: :post %>
         <% end %>
       </td>

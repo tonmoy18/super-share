@@ -1,7 +1,7 @@
 class LoginsController < ApplicationController
   before_action :set_login, only: [:show, :edit, :update, :follow]
   before_action :check_admin, only: [:new, :create]
-  before_action :check_self, only: [:edit, :update]
+  before_action :check_self, only: [:edit, :update]  
   # GET /logins
   # GET /logins.json
   def index
@@ -53,10 +53,12 @@ class LoginsController < ApplicationController
   end
 
   def follow
-    @follow = Follow.create(follower_id: @current_user.id, author_id: @login.id)
-    respond_to do |format|
-      format.html { redirect_to logins_url }
-      format.json { head :no_content }
+    if (['Admin', 'Author']).include? LOGIN_TYPES[@login.login_type]
+      @follow = Follow.create(follower_id: @current_user.id, author_id: @login.id)
+      respond_to do |format|
+        format.html { redirect_to logins_url }
+        format.json { head :no_content }
+      end
     end
   end
 
