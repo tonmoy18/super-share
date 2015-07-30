@@ -17,7 +17,7 @@
   <tbody>
     <% @posts.each do |post| %>
     <tr class="row">
-      <td class="col-sm-8"><%= link_to post.post, post_path(post) %></td>
+      <td class="col-sm-8"><%= post.post %></td>
       <td class="col-sm-3"><%= post.login.username %></td>
       <td class="col-sm-1"><%= post.cost %></td>
     </tr>
